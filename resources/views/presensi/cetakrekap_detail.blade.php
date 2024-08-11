@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>A4</title>
+    <title>Cetak Rekap Detail</title>
     <style>
         #title {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: "Times New Roman", Times, serif;
             font-size: 18px;
             font-weight: bold;
         }
@@ -58,15 +58,15 @@
         <table style="width: 100%">
             <tr>
                 <td style="width: 30px">
-                    <img src="{{ asset('assets/img/logopresensi.png') }}" width="70" height="70" alt="">
+                    <img src="{{ asset('assets/img/logo1.jpg') }}" width="70" height="70" alt="">
                 </td>
                 <td>
                     <span id="title">
                         REKAP PRESENSI KARYAWAN<br>
                         PERIODE {{ strtoupper($namabulan[$bulan]) }} {{ $tahun }}<br>
-                        PT. ADAM ADIFA<br>
+                        PERUMDAM TIRTA SENENTANG<br>
                     </span>
-                    <span><i>Jln. H. Dahlan No. 75, Kecamatan Sindangrasa, Kabupaten Ciamis</i></span>
+                    <span><i>Jl. M. Saad, Tj. Puri, Kec. Sintang, Kabupaten Sintang, Kalimantan Barat</i></span>
                 </td>
             </tr>
         </table>
@@ -246,15 +246,15 @@
         <table width="100%" style="margin-top:100px">
             <tr>
                 <td></td>
-                <td style="text-align: center">Tasikmalaya, {{ date('d-m-Y') }}</td>
+                <td style="text-align: center">Sintang, {{ date('d-m-Y') }}</td>
             </tr>
             <tr>
                 <td style="text-align: center; vertical-align:bottom" height="100px">
-                    <u>Qiana Aqila</u><br>
-                    <i><b>HRD Manager</b></i>
+                    <u>Rizky Arvanda, A.md</u><br>
+                    <i><b>Verifikator</b></i>
                 </td>
                 <td style="text-align: center; vertical-align:bottom">
-                    <u>Daffa</u><br>
+                    <u>Dr. Jane E. Wuysang, MT</u><br>
                     <i><b>Direktur</b></i>
                 </td>
             </tr>

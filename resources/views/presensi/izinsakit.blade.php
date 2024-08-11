@@ -7,7 +7,7 @@
                     <!-- Page pre-title -->
 
                     <h2 class="page-title">
-                        Data Izin / Sakit
+                        Data Izin Sakit/Perbaikan
                     </h2>
                 </div>
 
@@ -331,7 +331,7 @@
                         </div>
                         <div class="row mt-1">
                             <div class="col-12">
-                                <div class="form-gropu">
+                                <div class="form-group">
                                     <button class="btn btn-primary w-100" type="submit">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-send"
                                             width="24" height="24" viewBox="0 0 24 24" stroke-width="2"

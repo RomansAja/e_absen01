@@ -5,7 +5,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <h1 class="navbar-brand navbar-brand-autodark">
-            <p width="110" height="32" alt="E-presensi" class="navbar-brand-image"></p>
+            <img src="" width="210" height="100" alt="PDAM e-PRESENSI" class="navbar-brand-image">
         </h1>
         <div class="navbar-nav flex-row d-lg-none">
             <div class="nav-item d-none d-lg-flex me-3">
@@ -214,7 +214,7 @@
                             </svg>
                         </span>
                         <span class="nav-link-title">
-                            Home
+                            Dashboard
                         </span>
                     </a>
                 </li>

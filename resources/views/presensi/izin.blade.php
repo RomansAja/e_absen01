@@ -7,7 +7,7 @@
                 <ion-icon name="chevron-back-outline"></ion-icon>
             </a>
         </div>
-        <div class="pageTitle">Data Izin / Sakit</div>
+        <div class="pageTitle">Data Izin/Sakit/Perbaikan/Cuti</div>
         <div class="right"></div>
     </div>
 
@@ -198,7 +198,7 @@
             <a class="dropdown-item bg-primary" href="/izinsakit">
                 <ion-icon name="document-outline" role="img" class="md hydrated"
                     aria-label="videocam outline"></ion-icon>
-                <p>Sakit</p>
+                <p>Sakit/Perbaikan</p>
             </a>
             <a class="dropdown-item bg-primary" href="/izincuti">
                 <ion-icon name="document-outline" role="img" class="md hydrated"
