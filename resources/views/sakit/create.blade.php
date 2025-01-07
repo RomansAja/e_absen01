@@ -21,7 +21,7 @@
                 <ion-icon name="chevron-back-outline"></ion-icon>
             </a>
         </div>
-        <div class="pageTitle">Form Pengajuan Izin Sakit/Perbaikan</div>
+        <div class="pageTitle">Form Sakit</div>
         <div class="right"></div>
     </div>
     <!-- * App Header -->
@@ -60,7 +60,7 @@
                         placeholder="Keterangan">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary w-100">Kirim</button>
+                    <button class="btn btn-primary w-100" style="border-radius: 12px;">Kirim</button>
                 </div>
             </form>
         </div>

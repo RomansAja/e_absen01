@@ -3,26 +3,54 @@
     <style>
         .logout {
             position: absolute;
-            color: black;
+            color: white;
             font-size: 30px;
+            text-decoration: none;
+            right: 10px;
+            margin-top: 10px !important;
+            margin-right: 15px !important;
+
+        }
+
+        .avatar {
+            position: absolute;
             text-decoration: none;
             right: 8px;
         }
 
-        .logout:hover {
-            color: blue;
+        #user-nav1 {
+            height: 180px;
+            background-color: #092c9f;
+            padding: 20px;
         }
 
-        #icontxt:hover {
-            color: blue;
+
+
+        .logout:hover {
+            color: white;
+
+        }
+
+        #user-info {
+            font-family: "Roboto", sans-serif !important;
         }
     </style>
     <div class="section" id="user-section">
-        <a href="/proseslogout" class="logout">
-            <ion-icon name="exit-outline"></ion-icon>
-        </a>
         <div id="user-detail">
-            <div class="avatar">
+            <div id="avatar1">
+                <img src="assets/img/lg1.png" alt="avatar" id="logo" class="imaged w64"
+                    style="height:43px; weight: 22px; margin-left: 20px !important;">
+            </div>
+            <div id="user-info1">
+                <a href="/proseslogout" class="logout">
+                    <ion-icon name="exit-outline"></ion-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="user-nav1">
+        <div id="user-detail">
+            <div class="avatar" style="margin-right: 15px !important;">
                 @if (!empty(Auth::guard('karyawan')->user()->foto))
                     @php
                         $path = Storage::url('uploads/karyawan/' . Auth::guard('karyawan')->user()->foto);
@@ -37,27 +65,20 @@
                 <span id="user-role">{{ Auth::guard('karyawan')->user()->jabatan }}</span>
                 <span id="user-role">({{ $cabang->nama_cabang }})</span>
                 <p style="margin-top: 15px">
-                    <span id="user-role">({{ $departemen->nama_dept }})</span>
+                    <span id="user-role">PERUMDAM Tirta Senentang</span>
                 </p>
             </div>
         </div>
+
     </div>
     <div class="section" id="menu-section">
-        <div class="card" id="cardltr">
+        <div class="card">
             <div class="card-body text-center">
                 <div class="list-menu">
                     <div class="item-menu text-center">
                         <div class="menu-icon">
-                            <a href="/editprofile" class="warning" id="icontxt" style="font-size: 40px;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    class="icon icon-tabler icons-tabler-outline icon-tabler-user-edit">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-                                    <path d="M6 21v-2a4 4 0 0 1 4 -4h3.5" />
-                                    <path d="M18.42 15.61a2.1 2.1 0 0 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39z" />
-                                </svg>
+                            <a href="/editprofile" class="green" style="font-size: 40px;">
+                                <ion-icon name="person-sharp"></ion-icon>
                             </a>
                         </div>
                         <div class="menu-name">
@@ -66,19 +87,8 @@
                     </div>
                     <div class="item-menu text-center">
                         <div class="menu-icon">
-                            <a href="/presensi/izin" class="warning" id="icontxt" style="font-size: 40px;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-user">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M12 21h-6a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4.5" />
-                                    <path d="M16 3v4" />
-                                    <path d="M8 3v4" />
-                                    <path d="M4 11h16" />
-                                    <path d="M19 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                                    <path d="M22 22a2 2 0 0 0 -2 -2h-2a2 2 0 0 0 -2 2" />
-                                </svg>
+                            <a href="/presensi/izin" class="danger" style="font-size: 40px;">
+                                <ion-icon name="calendar-number"></ion-icon>
                             </a>
                         </div>
                         <div class="menu-name">
@@ -87,19 +97,8 @@
                     </div>
                     <div class="item-menu text-center">
                         <div class="menu-icon">
-                            <a href="/presensi/histori" class="warning" id="icontxt" style="font-size: 40px;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    class="icon icon-tabler icons-tabler-outline icon-tabler-clipboard-text">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path
-                                        d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
-                                    <path
-                                        d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" />
-                                    <path d="M9 12h6" />
-                                    <path d="M9 16h6" />
-                                </svg>
+                            <a href="/presensi/histori" class="warning" style="font-size: 40px;">
+                                <ion-icon name="document-text"></ion-icon>
                             </a>
                         </div>
                         <div class="menu-name">
@@ -108,16 +107,8 @@
                     </div>
                     <div class="item-menu text-center">
                         <div class="menu-icon">
-                            <a href="" class="warning" style="font-size: 40px;" id="icontxt">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    class="icon icon-tabler icons-tabler-outline icon-tabler-map-pin">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                                    <path
-                                        d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
-                                </svg>
+                            <a href="" class="orange" style="font-size: 40px;">
+                                <ion-icon name="location"></ion-icon>
                             </a>
                         </div>
                         <div class="menu-name">
@@ -131,8 +122,9 @@
     <div class="section mt-2" id="presence-section">
         <div class="todaypresence">
             <div class="row">
+
                 <div class="col-6">
-                    <div class="card" id="masuk">
+                    <div class="card gradasigreen">
                         <div class="card-body">
                             <div class="presencecontent">
                                 <div class="iconpresence">
@@ -158,7 +150,7 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="card" id="pulang">
+                    <div class="card gradasired">
                         <div class="card-body">
                             <div class="presencecontent">
                                 <div class="iconpresence">
@@ -194,8 +186,8 @@
                         <div class="card-body text-center" style="padding: 12px 12px !important; line-height:0.8rem">
                             <span class="badge bg-danger"
                                 style="position: absolute; top:3px; right:10px; font-size:0.6rem; z-index:999">{{ $rekappresensi->jmlhadir }}</span>
-                            <ion-icon name="checkmark-done-outline" style="font-size: 1.6rem;"
-                                class="text-primary mb-1">></ion-icon>
+                            <ion-icon name="accessibility-outline" style="font-size: 1.6rem;"
+                                class="text-primary mb-1"></ion-icon>
                             <br>
                             <span style="font-size: 0.8rem; font-weight:500">Hadir</span>
                         </div>
@@ -228,6 +220,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-3">
                     <div class="card">
                         <div class="card-body text-center" style="padding: 12px 12px !important; line-height:0.8rem">
@@ -235,10 +228,25 @@
                                 style="position: absolute; top:3px; right:10px; font-size:0.6rem; z-index:999">
                                 {{ $rekappresensi->jmlcuti }}
                             </span>
-                            <ion-icon name="calendar-outline" style="font-size: 1.6rem;"
-                                class="text-danger mb-1">></ion-icon>
+                            <ion-icon name="document-outline" style="font-size: 1.6rem;"
+                                class="text-danger mb-1"></ion-icon>
                             <br>
                             <span style="font-size: 0.8rem; font-weight:500">Cuti</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <br>
+                    <div class="card">
+                        <div class="card-body text-center" style="padding: 12px 12px !important; line-height:0.8rem">
+                            <span class="badge bg-danger"
+                                style="position: absolute; top:3px; right:10px; font-size:0.6rem; z-index:999">
+                                {{ $rekappresensi->jmlperbaikan }}</span>
+                            <ion-icon name="construct-outline" style="font-size: 1.6rem;"
+                                class="text-warning mb-1"></ion-icon>
+                            <br>
+                            <span style="font-size: 0.8rem; font-weight:500">Lainnya..</span>
                         </div>
                     </div>
                 </div>
@@ -262,26 +270,25 @@
             <div class="tab-content mt-2" style="margin-bottom:100px;">
                 <div class="tab-pane fade show active" id="home" role="tabpanel">
                     <!--
-                                                                                                                                                                                                                                                                                                                                <ul class="listview image-listview">
-                                                                                                                                                                                                                                                                                                                                    @foreach ($historibulanini as $d)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <ul class="listview image-listview">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @foreach ($historibulanini as $d)
     @php
         $path = Storage::url('uploads/absensi/' . $d->foto_in);
     @endphp
-                                                                                                                                                                                                                                                                                                                                    <li>
-                                                                                                                                                                                                                                                                                                                                        <div class="item">
-                                                                                                                                                                                                                                                                                                                                            <div class="icon-box bg-primary">
-                                                                                                                                                                                                                                                                                                                                                <ion-icon name="finger-print-outline"></ion-icon>
-                                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                                            <div class="in">
-                                                                                                                                                                                                                                                                                                                                                <div>{{ date('d-m-Y', strtotime($d->tgl_presensi)) }}</div>
-                                                                                                                                                                                                                                                                                                                                                <span class="badge badge-success">{{ $d->jam_in }}</span>
-                                                                                                                                                                                                                                                                                                                                                <span class="badge badge-danger">{{ $presensihariini != null && $d->jam_out != null ? $d->jam_out : 'Belum Absen' }}</span>
-                                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                                                                    </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="item">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="icon-box bg-primary">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <ion-icon name="finger-print-outline"></ion-icon>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="in">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div>{{ date('d-m-Y', strtotime($d->tgl_presensi)) }}</div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <span class="badge badge-success">{{ $d->jam_in }}</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <span class="badge badge-danger">{{ $presensihariini != null && $d->jam_out != null ? $d->jam_out : 'Belum Absen' }}</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>                                                                                                                                                                                                                        </li>
     @endforeach
-                                                                                                                                                                                                                                                                                                                                </ul>
-                                                                                                                                                                                                                                                                                                                            -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            -->
 
                     @foreach ($historibulanini as $d)
                         @if ($d->status == 'h')
@@ -383,12 +390,37 @@
                                     </div>
                                 </div>
                             </div>
+                        @elseif($d->status == 'p')
+                            <div class="card mb-1">
+                                <div class="card-body">
+                                    <div class="historicontent">
+                                        <div class="iconpresensi">
+                                            <ion-icon name="construct-outline" style="font-size: 48px;"
+                                                class="text-primary"></ion-icon>
+                                        </div>
+                                        <div class="datapresensi">
+                                            <h3 style="line-height: 3px">Perbaikan - {{ $d->kode_izin }}</h3>
+                                            <h4 style="margin:0px !important">
+                                                {{ date('d-m-Y', strtotime($d->tgl_presensi)) }}</h4>
+                                            <span>
+                                                {{ $d->keterangan }}
+                                            </span>
+                                            <br>
+                                            @if (!empty($d->doc_sid))
+                                                <span style="color: blue">
+                                                    <ion-icon name="document-attach-outline"></ion-icon> SID
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         @elseif($d->status == 'c')
                             <div class="card mb-1">
                                 <div class="card-body">
                                     <div class="historicontent">
                                         <div class="iconpresensi">
-                                            <ion-icon name="document-outline" style="font-size: 48px;"
+                                            <ion-icon name="calendar-outline" style="font-size: 48px;"
                                                 class="text-info"></ion-icon>
                                         </div>
                                         <div class="datapresensi">

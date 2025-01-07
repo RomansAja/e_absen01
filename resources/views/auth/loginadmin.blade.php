@@ -94,7 +94,8 @@
                                         </label>
                                     </div>
                                     <div class="form-footer">
-                                        <button type="submit" class="btn btn-primary w-100">Sign in</button>
+                                        <button type="submit" class="btn btn-primary w-100"
+                                            style="border-radius: 13px;">Sign in</button>
                                     </div>
                                 </form>
                             </div>

@@ -7886,40 +7886,36 @@ body.dark-mode-active .cart-item .cart-item-footer {
 }
 
 #user-section {
-    height: 180px;
-    padding: 20px;
+    height: 50px;
+    background-color: #092c9f;
+    padding: 5px;
 }
 
 #user-detail {
-    margin-top: 20px;
+    margin-top: -3px;
     display: flex;
 }
 
 #user-info {
-    margin-left: 30px !important;
-    line-height: 2px;
-    color: black;
+    margin-left: 1px !important;
+    line-height: 3px;
 }
 
 #user-name {
-    color: black;
+    color: white;
 }
 
 #user-role {
-    color: black;
-}
-
-#cardltr{
-    background-color: #007cdb !important;
-    border-radius: 10px;
-    height: 100px;
+    color: white;
 }
 
 #menu-section {
+    margin-top: 15px;
     position: absolute;
     width: 100%;
     top: 120px;
     z-index: 999;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .list-menu {
@@ -7931,6 +7927,7 @@ body.dark-mode-active .cart-item .cart-item-footer {
     position: absolute;
     top: 150px;
     width: 100%;
+    background-color: #e9ecef;
     border-radius: 10px 10px 0px 0px;
 }
 
@@ -7974,20 +7971,8 @@ body.dark-mode-active .cart-item .cart-item-footer {
 .rekappresencetitle {
     font-weight: 600;
 }
-.menu-name{
-    color: white !important;
-}
+
 #chartdiv {
     width: 100%;
     height: 500px;
-}
-#masuk{
-    background-color: #53f23b !important;
-}
-
-#pulang{
-    background-color: #f2ca3b !important;
-}
-#absen1{
-    background-color: #007cdb !important;
 }

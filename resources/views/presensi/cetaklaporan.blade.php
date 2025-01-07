@@ -61,7 +61,7 @@
 <!-- Set "A5", "A4" or "A3" for class name -->
 <!-- Set also "landscape" if you need -->
 
-<body class="A4">
+<body class="F4">
 
     <!-- Each sheet element should have the class "sheet" -->
     <!-- "padding-**mm" is optional: you can set 10, 15, 20 or 25 -->
@@ -69,7 +69,7 @@
 
         <table style="width: 100%">
             <tr>
-                <td style="width: 30px">
+                <td style="width: 30px;">
                     <img src="{{ asset('assets/img/logo1.jpg') }}" width="70" height="70" alt="">
                 </td>
                 <td>
@@ -88,7 +88,8 @@
                     @php
                         $path = Storage::url('uploads/karyawan/' . $karyawan->foto);
                     @endphp
-                    <img src="{{ url($path) }}" alt="" width="120px" height="150">
+                    <img style="border-radius: 10px;" src="{{ url($path) }}" alt="" width="120px"
+                        height="150">
                 </td>
             </tr>
             <tr>
@@ -123,6 +124,8 @@
                 <th>Tanggal</th>
                 <th>Jam Masuk</th>
                 <th>Foto</th>
+                <th>Awal Istirahat</th>
+                <th>Akhir Istirahat</th>
                 <th>Jam Pulang</th>
                 <th>Foto</th>
                 <th>Status</th>
@@ -160,6 +163,8 @@
                         <td>{{ date('d-m-Y', strtotime($d->tgl_presensi)) }}</td>
                         <td>{{ $d->jam_in }}</td>
                         <td><img src="{{ url($path_in) }}" alt="" class="foto"></td>
+                        <td>{{ $d->awal_istirahat }}</td>
+                        <td>{{ $d->akhir_istirahat }}</td>
                         <td>{{ $d->jam_out != null ? $d->jam_out : 'Belum Absen' }}</td>
                         <td>
                             @if ($d->jam_out != null)

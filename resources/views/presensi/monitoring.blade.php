@@ -123,6 +123,8 @@
                                                     <th>Jadwal</th>
                                                     <th>Jam Masuk</th>
                                                     <th>Foto</th>
+                                                    <th>Awal Istirahat</th>
+                                                    <th>Akhir Istirahat</th>
                                                     <th>Jam Pulang</th>
                                                     <th>Foto</th>
                                                     <th>Status</th>

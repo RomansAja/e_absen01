@@ -129,7 +129,7 @@ function hitungjamkerja($tgl_presensi, $jam_mulai, $jam_berakhir, $max_total_jam
 
     $menitdesimal = ROUND($menit / 60, 2);
     /*
-    Jika Karyawan Pulang Setelah Jam Isitrahat Maka Total Jam Kerja dikurang 1 Jam  Jika
+    Jika Karyawan Pulang Setelah Jam Istirahat Maka Total Jam Kerja dikurang 1 Jam  Jika
     Kurang dari Jam Istirahat Tidak DI kurangi 1 Jam */
     if ($jam_awal_istirahat != "NA") {
         if ($jam_pulang > $jam_akhir_istirahat) {

@@ -57,7 +57,7 @@
             <div class="alert alert-warning">
                 <p>
                     Maaf,Anda hari ini tidak bisa melakukan presensi karena sudah melakukan pengajuan Izin Sebelumnya !,
-                    Silahkan Hubungi HRD
+                    Silahkan Hubungi Staf SPI
                 </p>
             </div>
         </div>

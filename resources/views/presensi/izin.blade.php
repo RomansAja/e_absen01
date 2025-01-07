@@ -106,6 +106,8 @@
                         $status = 'Sakit';
                     } elseif ($d->status == 'c') {
                         $status = 'Cuti';
+                    } elseif ($d->status == 'p') {
+                        $status = 'Perbaikan';
                     } else {
                         $status = 'Not Found';
                     }
@@ -124,6 +126,9 @@
                                 @elseif($d->status == 'c')
                                     <ion-icon name="calendar-outline"
                                         style="font-size: 48px; color:rgb(237, 128, 5)"></ion-icon>
+                                @elseif($d->status == 'p')
+                                    <ion-icon name="build-outline"
+                                        style="font-size: 48px; color:rgb(18, 196, 12)"></ion-icon>
                                 @endif
                             </div>
                             <div class="datapresensi">
@@ -196,12 +201,16 @@
             </a>
 
             <a class="dropdown-item bg-primary" href="/izinsakit">
-                <ion-icon name="document-outline" role="img" class="md hydrated"
+                <ion-icon name="medkit-outline" role="img" class="md hydrated" aria-label="videocam outline"></ion-icon>
+                <p>Sakit</p>
+            </a>
+            <a class="dropdown-item bg-primary" href="/perbaikan">
+                <ion-icon name="construct-outline" role="img" class="md hydrated"
                     aria-label="videocam outline"></ion-icon>
-                <p>Sakit/Perbaikan</p>
+                <p>Perbaikan</p>
             </a>
             <a class="dropdown-item bg-primary" href="/izincuti">
-                <ion-icon name="document-outline" role="img" class="md hydrated"
+                <ion-icon name="calendar-outline" role="img" class="md hydrated"
                     aria-label="videocam outline"></ion-icon>
                 <p>Cuti</p>
             </a>

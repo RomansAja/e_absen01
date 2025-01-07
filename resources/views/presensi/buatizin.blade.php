@@ -36,6 +36,7 @@
                         <option value="">Izin / Sakit</option>
                         <option value="i">Izin</option>
                         <option value="s">Sakit</option>
+                        <option value="p">Perbaikan</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -88,22 +89,22 @@
                 var keterangan = $("#keterangan").val();
                 if (tgl_izin == "") {
                     Swal.fire({
-                        title: 'Oops !',
+                        title: 'Eitss !',
                         text: 'Tanggal Harus Diisi',
                         icon: 'warning'
                     });
                     return false;
                 } else if (status == "") {
                     Swal.fire({
-                        title: 'Oops !',
+                        title: 'Eitss !',
                         text: 'Status Harus Diisi',
                         icon: 'warning'
                     });
                     return false;
                 } else if (keterangan == "") {
                     Swal.fire({
-                        title: 'Oops !',
-                        text: 'Ketereangan Harus Diisi',
+                        title: 'Eitss !',
+                        text: 'Keterangan Harus Diisi',
                         icon: 'warning'
                     });
                     return false;

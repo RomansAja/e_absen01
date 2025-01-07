@@ -128,6 +128,12 @@ function selisih($jam_masuk, $jam_keluar)
                 <span class="badge bg-danger">Belum Absen</span>
             </td>
             <td>
+                <span class="badge bg-danger">Belum Absen</span>
+            </td>
+            <td>
+                <span class="badge bg-danger">Belum Absen</span>
+            </td>
+            <td>
                 @if ($d->status == 'i')
                     <span class="badge bg-warning">I</span>
                 @elseif($d->status == 's')

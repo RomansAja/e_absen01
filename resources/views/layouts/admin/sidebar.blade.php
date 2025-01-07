@@ -4,8 +4,12 @@
             aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <h1 class="navbar-brand navbar-brand-autodark">
-            <img src="" width="210" height="100" alt="PDAM e-PRESENSI" class="navbar-brand-image">
+        <h1 class="navbar-brand">
+            <a href="">
+                <img src="{{ asset('assets/img/lg1.png') }}" width="150" height="50" alt="img"
+                    class="navbar-brand-image">
+                E-Presensi
+            </a>
         </h1>
         <div class="navbar-nav flex-row d-lg-none">
             <div class="nav-item d-none d-lg-flex me-3">
@@ -214,7 +218,7 @@
                             </svg>
                         </span>
                         <span class="nav-link-title">
-                            Dashboard
+                            Home
                         </span>
                     </a>
                 </li>

@@ -115,13 +115,16 @@
                             $status = $datapresensi[2];
                             $jam_in = $datapresensi[0] != "NA" ? date("H:i",strtotime($datapresensi[0])) : 'Belum Absen';
                             $jam_out = $datapresensi[1] != "NA" ? date("H:i",strtotime($datapresensi[1])) : 'Belum Absen';
+                            $awal_istirahat = $datapresensi[10] != "NA" ? date("H:i",strtotime($datapresensi[10])) : 'Belum Absen';
+                            $akhir_istirahat = $datapresensi[11] != "NA" ? date("H:i",strtotime($datapresensi[11])) : 'Belum Absen';
+
                             $jam_masuk = $datapresensi[4] != "NA" ? date("H:i",strtotime($datapresensi[4])) : '';
                             $jam_pulang = $datapresensi[5] != "NA" ? date("H:i",strtotime($datapresensi[5])) : '';
                             $nama_jam_kerja = $datapresensi[3] != "NA" ? $datapresensi[3] : '';
                             $total_jam = $datapresensi[8] != "NA" ? $datapresensi[8] : 0;
                             $lintashari = $datapresensi[9];
-                            $jam_awal_istirahat = $datapresensi[10];
-                            $jam_akhir_istirahat = $datapresensi[11];
+                            $jam_awal_istirahat = date("H:i",strtotime($datapresensi[12]));
+                            $jam_akhir_istirahat = date("H:i",strtotime($datapresensi[13]));
                             $jam_berakhir = $jam_out > $jam_pulang ? $jam_pulang  : $jam_out;
 
                             $terlambat = hitungjamterlambat($jam_masuk,$jam_in);
@@ -204,11 +207,14 @@
                             </span>
                             <br>
                             <span style="color:green">
-                                {{ $jam_masuk }} - {{ $jam_pulang }}
+                                {{ $jam_masuk }}-{{ $jam_pulang }}<br>
+                                Break:({{ $jam_awal_istirahat }}-{{ $jam_akhir_istirahat }})
                             </span>
                             <br>
                             <span style="color: orange">
                                 {{ $jam_in }} - {{ $jam_out }}
+                                Break in/out:
+                                ({{ $awal_istirahat }}-{{ $akhir_istirahat }})
                             </span>
                             <br>
                             <span style="color:blue ">
@@ -219,7 +225,6 @@
                                 <span style="color:red ">
                                     Terlambat : {{ $terlambat }} ({{ $terlambat_desimal }})
                                     <br>
-                                    Denda : {{ $denda }}
                                 </span>
                             @endif
                         @endif

@@ -22,6 +22,8 @@
 
         }
 
+
+
         #map {
             height: 200px;
         }
@@ -65,6 +67,8 @@
         <p>Mulai : {{ date('H:i', strtotime($jamkerja->awal_jam_masuk)) }}</p>
         <p>Masuk : {{ date('H:i', strtotime($jamkerja->jam_masuk)) }}</p>
         <p>Akhir : {{ date('H:i', strtotime($jamkerja->akhir_jam_masuk)) }}</p>
+        <p>Start Break : {{ date('H:i', strtotime($jamkerja->awal_jam_istirahat)) }}</p>
+        <p>End Break : {{ date('H:i', strtotime($jamkerja->akhir_jam_istirahat)) }}</p>
         <p>Pulang : {{ date('H:i', strtotime($jamkerja->jam_pulang)) }}</p>
     </div>
     <div class="row">
@@ -80,6 +84,20 @@
                     Absen Masuk
                 </button>
             @endif
+        </div>
+    </div>
+    <div class="row mt-2 ">
+        <div class="col">
+            <button id="startBreak" class="btn btn-success btn-block">
+                <ion-icon name="camera-outline"></ion-icon>
+                Istirahat Awal
+            </button>
+        </div>
+        <div class="col">
+            <button id="endBreak" class="btn btn-primary btn-block">
+                <ion-icon name="camera-outline"></ion-icon>
+                Istirahat Akhir
+            </button>
         </div>
     </div>
     <div class="row mt-2">
@@ -160,6 +178,8 @@
                 fillOpacity: 0.5,
                 radius: radius
             }).addTo(map);
+
+
         }
 
         function errorCallback() {
@@ -208,6 +228,81 @@
                 }
             });
 
+        });
+
+        $("#startBreak").click(function(e) {
+            Webcam.snap(function(uri) {
+                image = uri;
+            });
+            var lokasi = $("#lokasi").val();
+            $.ajax({
+                type: 'POST',
+                url: '/presensi/breakist',
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    image: image,
+                    lokasi: lokasi,
+                    kode_jam_kerja: "{{ $kode_jam_kerja }}",
+                },
+                cache: false,
+                success: function(respond) {
+                    var status = respond.split("|");
+                    if (status[0] == "success") {
+                        notifikasi_in.play();
+                        Swal.fire({
+                            title: 'Berhasil !',
+                            text: status[1],
+                            icon: 'success'
+                        })
+                        setTimeout("location.href='/dashboard'", 3000);
+                    } else {
+                        radius_sound.play();
+                        Swal.fire({
+                            title: 'Error !',
+                            text: status[1],
+                            icon: 'error'
+                        })
+                    }
+                }
+            });
+        });
+
+        $("#endBreak").click(function(e) {
+            Webcam.snap(function(uri) {
+                image = uri;
+            });
+            var lokasi = $("#lokasi").val();
+            $.ajax({
+                type: 'POST',
+                url: '/presensi/breakist',
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    image: image,
+                    lokasi: lokasi,
+                    kode_jam_kerja: "{{ $kode_jam_kerja }}",
+
+                },
+                cache: false,
+                success: function(respond) {
+                    var status = respond.split("|");
+                    if (status[0] == "success") {
+                        notifikasi_in.play();
+                        Swal.fire({
+                            title: 'Berhasil !',
+                            text: status[1],
+                            icon: 'success'
+                        })
+                        setTimeout("location.href='/dashboard'", 3000);
+                    } else {
+                        radius_sound.play();
+                        Swal.fire({
+                            title: 'Error !',
+                            text: status[1],
+                            icon: 'error'
+                        })
+                    }
+                }
+            });
         });
     </script>
 @endpush

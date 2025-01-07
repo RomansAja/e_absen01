@@ -102,7 +102,7 @@
                                                             <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
                                                             <path d="M21 21l-6 -6"></path>
                                                         </svg>
-                                                        Cari
+                                                        Tampilkan
                                                     </button>
                                                 </div>
                                             </div>
@@ -184,10 +184,10 @@
                                                                 <span class=" badge bg-danger badge-sm">
                                                                     <svg xmlns="http://www.w3.org/2000/svg"
                                                                         class="icon icon-tabler icon-tabler-lock"
-                                                                        width="24" height="24" viewBox="0 0 24 24"
-                                                                        stroke-width="1.5" stroke="currentColor"
-                                                                        fill="none" stroke-linecap="round"
-                                                                        stroke-linejoin="round">
+                                                                        width="24" height="24" border-radius="20"
+                                                                        viewBox="0 0 24 24" stroke-width="1.5"
+                                                                        stroke="currentColor" fill="none"
+                                                                        stroke-linecap="round" stroke-linejoin="round">
                                                                         <path stroke="none" d="M0 0h24v24H0z"
                                                                             fill="none" />
                                                                         <path
@@ -221,7 +221,7 @@
                                                     <td class="text-center">
                                                         @if ($d->status_jam_kerja == 1)
                                                             <a href="/karyawan/{{ $d->nik }}/lockandunlockjamkerja">
-                                                                <span class=" badge bg-danger badge-sm">
+                                                                <span class="badge bg-danger badge-sm">
                                                                     <svg xmlns="http://www.w3.org/2000/svg"
                                                                         class="icon icon-tabler icon-tabler-lock"
                                                                         width="24" height="24" viewBox="0 0 24 24"
@@ -280,6 +280,7 @@
                                                                             </path>
                                                                             <path d="M16 5l3 3"></path>
                                                                         </svg>
+                                                                        Edit
                                                                     </a>
                                                                 @endrole
 
@@ -298,6 +299,7 @@
                                                                         </path>
                                                                         <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
                                                                     </svg>
+                                                                    Set Jam
                                                                 </a>
                                                                 <a href="/karyawan/{{ Crypt::encrypt($d->nik) }}/resetpassword"
                                                                     class="btn btn-sm btn-warning">

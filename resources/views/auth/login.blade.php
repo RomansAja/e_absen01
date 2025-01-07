@@ -31,10 +31,10 @@
 
         <div class="login-form mt-1">
             <div class="section">
-                <img src="{{ asset('assets/img/login/lgnboy.webp') }}" alt="image" class="form-image">
+                <img src="{{ asset('assets/img/lg1.png') }}" alt="image" class="form-image">
             </div>
             <div class="section mt-1">
-                <h1>E-Presensi </h1>
+                <h1>E-Presensi</h1>
                 <h4>Silahkan Login</h4>
             </div>
             <div class="section mt-1 mb-5">
@@ -73,7 +73,8 @@
                     </div>
 
                     <div class="form-button-group">
-                        <button type="submit" class="btn btn-success btn-block btn-lg">Log in</button>
+                        <button type="submit" class="btn btn-success btn-block btn-lg" style="border-radius: 13px;">Log
+                            in</button>
                     </div>
 
                 </form>

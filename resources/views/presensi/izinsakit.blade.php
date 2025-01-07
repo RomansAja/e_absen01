@@ -7,7 +7,7 @@
                     <!-- Page pre-title -->
 
                     <h2 class="page-title">
-                        Data Izin Sakit/Perbaikan
+                        Data Izin Sakit
                     </h2>
                 </div>
 
@@ -231,6 +231,8 @@
                                             Izin
                                         @elseif ($d->status == 's')
                                             Sakit
+                                        @elseif ($d->status == 'p')
+                                            Perbaikan
                                         @elseif ($d->status = 'c')
                                             Cuti
                                         @endif

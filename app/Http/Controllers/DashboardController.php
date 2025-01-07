@@ -34,6 +34,7 @@ class DashboardController extends Controller
             SUM(IF(status="h",1,0)) as jmlhadir,
             SUM(IF(status="i",1,0)) as jmlizin,
             SUM(IF(status="s",1,0)) as jmlsakit,
+            SUM(IF(status="p",1,0)) as jmlperbaikan,
             SUM(IF(status="c",1,0)) as jmlcuti,
             SUM(IF(jam_in > jam_masuk ,1,0)) as jmlterlambat
 
@@ -69,6 +70,7 @@ class DashboardController extends Controller
             SUM(IF(status="h",1,0)) as jmlhadir,
             SUM(IF(status="i",1,0)) as jmlizin,
             SUM(IF(status="s",1,0)) as jmlsakit,
+            SUM(IF(status="p",1,0)) as jmlperbaikan,
             SUM(IF(status="c",1,0)) as jmlcuti,
             SUM(IF(jam_in > jam_masuk ,1,0)) as jmlterlambat
 

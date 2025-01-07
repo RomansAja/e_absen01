@@ -11,6 +11,7 @@ use App\Http\Controllers\IzincutiController;
 use App\Http\Controllers\IzinsakitController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\KonfigurasiController;
+use App\Http\Controllers\PerbaikanController;
 use App\Http\Controllers\PresensiController;
 use App\Http\Controllers\UserController;
 use App\Models\Karyawan;
@@ -60,6 +61,7 @@ Route::middleware(['auth:karyawan'])->group(function () {
     Route::get('/presensi/{kode_jam_kerja}/create', [PresensiController::class, 'create']);
     Route::get('/presensi/pilihjamkerja', [PresensiController::class, 'pilihjamkerja']);
     Route::post('/presensi/store', [PresensiController::class, 'store']);
+    Route::post('/presensi/breakist', [PresensiController::class, 'breakist']);
     Route::get('/presensi/scanqr', [PresensiController::class, 'scanqr']);
     Route::post('/presensi/storeqr', [PresensiController::class, 'storeqr']);
     //Edit Profile
@@ -87,6 +89,12 @@ Route::middleware(['auth:karyawan'])->group(function () {
     Route::post('/izinsakit/store', [IzinsakitController::class, 'store']);
     Route::get('/izinsakit/{kode_izin}/edit', [IzinsakitController::class, 'edit']);
     Route::post('/izinsakit/{kode_izin}/update', [IzinsakitController::class, 'update']);
+
+    //Izin Perbaikan
+    Route::get('/perbaikan', [PerbaikanController::class, 'create']);
+    Route::post('/perbaikan/store', [PerbaikanController::class, 'store']);
+    Route::get('/perbaikan/{kode_izin}/edit', [PerbaikanController::class, 'edit']);
+    Route::post('/perbaikan/{kode_izin}/update', [PerbaikanController::class, 'update']);
     //Izin Cuti
     Route::get('/izincuti', [IzincutiController::class, 'create']);
     Route::post('/izincuti/store', [IzincutiController::class, 'store']);

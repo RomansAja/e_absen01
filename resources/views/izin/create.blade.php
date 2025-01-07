@@ -48,7 +48,7 @@
                         placeholder="Keterangan">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary w-100">Kirim</button>
+                    <button class="btn btn-primary w-100" style="border-radius: 12px;">Kirim</button>
                 </div>
             </form>
         </div>
